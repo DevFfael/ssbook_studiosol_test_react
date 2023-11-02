@@ -1,7 +1,9 @@
 export const theme = {
   colors: {
     primary: '#A076F2',
+    secondary: '#9E9E9E',
     background: '#f7f7f7',
+    backgroundLigth: '#ffffff',
     text: '#555555',
     secondaryText: '#757575',
   },
@@ -17,4 +19,10 @@ export const theme = {
     bold: 700,
   },
   fontFamily: 'Roboto, Arial, sans-serif',
+  breakpoints: {
+    xs: '480px', // Extra small
+    sm: '768px', // Small
+    md: '1024px', // Medium
+    lg: '1200px', // Large
+  },
 };
