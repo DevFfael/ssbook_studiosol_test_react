@@ -12,7 +12,7 @@ export const NavigationContainer = styled.nav`
   left: 0;
   right: 0;
   box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.08);
-  background-color: ${(props) => props.theme.colors.backgroundLigth};
+  background-color: ${(props) => props.theme.colors.white};
 
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: none;
