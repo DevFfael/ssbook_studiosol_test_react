@@ -16,6 +16,7 @@ export const theme = {
   },
   fontWeight: {
     regular: 400,
+    medium: 500,
     bold: 700,
   },
   fontFamily: 'Roboto, Arial, sans-serif',

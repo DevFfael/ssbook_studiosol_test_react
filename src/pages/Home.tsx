@@ -1,6 +1,7 @@
 import FavoriteAuthors from '../components/FavoriteAuthors';
 import FavoriteBooks from '../components/FavoriteBooks';
 import styled from 'styled-components';
+import Library from '../components/Library';
 
 const Container = styled.div`
   display: flex;
@@ -20,6 +21,10 @@ const HomeSection = styled.div`
     width: calc(100% - 140px);
     padding: 12px 0 12px 172px;
   }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    padding-bottom: 65px;
+  }
 `;
 
 const Home = () => {
@@ -28,6 +33,7 @@ const Home = () => {
       <FavoriteBooks />
       <HomeSection>
         <FavoriteAuthors />
+        <Library />
       </HomeSection>
     </Container>
   );

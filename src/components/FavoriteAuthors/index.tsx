@@ -10,7 +10,7 @@ const FavoriteAuthors = () => {
   return (
     <FavoriteAuthorsContainer>
       <SectionHeader>
-        <Title>Livros Favoritos</Title>
+        <Title>Autores Favoritos</Title>
         <ViewAll>ver todos</ViewAll>
       </SectionHeader>
       <AuthorsList />
