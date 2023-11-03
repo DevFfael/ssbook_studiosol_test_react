@@ -7,7 +7,7 @@ import {
 } from './style';
 import Image from '../../assets/image.png';
 
-const BookList = () => {
+const BookFavoriteList = () => {
   return (
     <BookListContainer>
       <BookCard>
@@ -34,4 +34,4 @@ const BookList = () => {
   );
 };
 
-export default BookList;
+export default BookFavoriteList;

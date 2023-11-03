@@ -1,5 +1,5 @@
 import { FavoriteBooksContainer, SectionHeader, Title, ViewAll } from './style';
-import BookList from './BookList';
+import BookFavoriteList from './BookFavoriteList';
 
 const FavoriteBooks = () => {
   return (
@@ -8,7 +8,7 @@ const FavoriteBooks = () => {
         <Title>Livros Favoritos</Title>
         <ViewAll>ver todos</ViewAll>
       </SectionHeader>
-      <BookList />
+      <BookFavoriteList />
     </FavoriteBooksContainer>
   );
 };
