@@ -3,6 +3,7 @@ import FavoriteBooks from '../components/FavoriteBooks';
 import styled from 'styled-components';
 import Library from '../components/Library';
 import Header from '../components/Header';
+import TabsNaviagtion from '../components/TabsNavigation';
 
 const Container = styled.div`
   display: flex;
@@ -26,11 +27,20 @@ const HomeSection = styled.div`
   }
 `;
 
+export const TabsNavigationArea = styled.div`
+  width: auto;
+  margin: 24px 172px;
+  border-bottom: 1px solid #e7e7e7;
+`;
+
 const Home = () => {
   return (
     <>
       <Header />
       <Container>
+        <TabsNavigationArea>
+          <TabsNaviagtion />
+        </TabsNavigationArea>
         <FavoriteBooks />
         <HomeSection>
           <FavoriteAuthors />
