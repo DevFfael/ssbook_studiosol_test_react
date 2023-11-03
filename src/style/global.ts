@@ -10,5 +10,7 @@ export default createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.colors.background};
     font-family: ${(props) => props.theme.fontFamily};
+    position: relative;
+    min-height: 100vh;
   }
 `;
