@@ -4,42 +4,40 @@ import {
   BookImage,
   BookListContainer,
   BookTitle,
+  InfoContainer,
 } from './style';
-import Image from '../../assets/image.png';
+import { Link } from 'react-router-dom';
+import { GET_FAVORITE_BOOKS } from '../../api';
+import { useQuery } from '@apollo/client';
+import Loading from '../Loading';
+
+interface IBook {
+  id: string;
+  name: string;
+  cover: string;
+  author: {
+    name: string;
+  };
+}
 
 const BookFavoriteList = () => {
+  const { loading, data } = useQuery(GET_FAVORITE_BOOKS);
+
+  if (loading) return <Loading />;
   return (
-    <BookListContainer>
-      <BookCard>
-        <BookImage src={Image} alt="Book 1" />
-        <BookTitle>Book Title 2</BookTitle>
-        <BookAuthor>Nome do autor</BookAuthor>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Image} alt="Book 1" />
-        <BookTitle>Book Title 2</BookTitle>
-        <BookAuthor>Nome do autor</BookAuthor>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Image} alt="Book 1" />
-        <BookTitle>Book Title 2</BookTitle>
-        <BookAuthor>Nome do autor</BookAuthor>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Image} alt="Book 1" />
-        <BookTitle>Book Title 2</BookTitle>
-        <BookAuthor>Nome do autor</BookAuthor>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Image} alt="Book 1" />
-        <BookTitle>Book Title 2</BookTitle>
-        <BookAuthor>Nome do autor</BookAuthor>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Image} alt="Book 1" />
-        <BookTitle>Book Title 2</BookTitle>
-        <BookAuthor>Nome do autor</BookAuthor>
-      </BookCard>
+    <BookListContainer $length={data && data.favoriteBooks.length}>
+      {data &&
+        data.favoriteBooks.map((book: IBook) => (
+          <Link to={`book/${book.id}`} style={{ textDecoration: 'none' }}>
+            <BookCard>
+              <BookImage src={book.cover} alt="Capa livro" />
+              <InfoContainer>
+                <BookTitle>{book.name}</BookTitle>
+                <BookAuthor>{book.author.name}</BookAuthor>
+              </InfoContainer>
+            </BookCard>
+          </Link>
+        ))}
     </BookListContainer>
   );
 };

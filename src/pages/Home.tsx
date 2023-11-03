@@ -31,6 +31,10 @@ export const TabsNavigationArea = styled.div`
   width: auto;
   margin: 24px 172px;
   border-bottom: 1px solid #e7e7e7;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    display: none;
+  }
 `;
 
 const Home = () => {

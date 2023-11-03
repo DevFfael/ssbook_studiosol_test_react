@@ -44,6 +44,61 @@ const BookList = () => {
           <BookAuthor>Raffael Oliveira</BookAuthor>
         </BookInfoContainer>
       </BookCard>
+      <BookCard>
+        <BookImage src={Book} />
+        <BookInfoContainer>
+          <BookName>
+            {
+              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
+            }
+          </BookName>
+          <BookAuthor>Raffael Oliveira</BookAuthor>
+        </BookInfoContainer>
+      </BookCard>
+      <BookCard>
+        <BookImage src={Book} />
+        <BookInfoContainer>
+          <BookName>
+            {
+              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
+            }
+          </BookName>
+          <BookAuthor>Raffael Oliveira</BookAuthor>
+        </BookInfoContainer>
+      </BookCard>
+      <BookCard>
+        <BookImage src={Book} />
+        <BookInfoContainer>
+          <BookName>
+            {
+              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
+            }
+          </BookName>
+          <BookAuthor>Raffael Oliveira</BookAuthor>
+        </BookInfoContainer>
+      </BookCard>
+      <BookCard>
+        <BookImage src={Book} />
+        <BookInfoContainer>
+          <BookName>
+            {
+              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
+            }
+          </BookName>
+          <BookAuthor>Raffael Oliveira</BookAuthor>
+        </BookInfoContainer>
+      </BookCard>
+      <BookCard>
+        <BookImage src={Book} />
+        <BookInfoContainer>
+          <BookName>
+            {
+              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
+            }
+          </BookName>
+          <BookAuthor>Raffael Oliveira</BookAuthor>
+        </BookInfoContainer>
+      </BookCard>
     </BookListContainer>
   );
 };

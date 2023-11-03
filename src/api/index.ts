@@ -14,8 +14,12 @@ export const GET_USER_PHOTO = gql`
 export const GET_FAVORITE_BOOKS = gql`
   query GetFavoriteBook {
     favoriteBooks {
-      name
       id
+      name
+      cover
+      author {
+        name
+      }
     }
   }
 `;
