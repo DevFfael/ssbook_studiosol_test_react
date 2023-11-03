@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-export const FavoriteBooksContainer = styled.div`
-  margin: 32px 0 32px 20px;
+export const FavoriteAuthorsContainer = styled.div`
+  margin: 30px 20px 0 20px;
 `;
 
 export const SectionHeader = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,14 +13,12 @@ export const SectionHeader = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: ${(props) => props.theme.fontFamily};
   font-weight: ${(props) => props.theme.fontWeight.bold};
   font-size: ${(props) => props.theme.fontSizes.lg};
   color: ${(props) => props.theme.colors.text};
 `;
 
 export const ViewAll = styled.a`
-  font-family: ${(props) => props.theme.fontFamily};
   font-weight: ${(props) => props.theme.fontWeight.bold};
   font-size: ${(props) => props.theme.fontSizes.sm};
   color: ${(props) => props.theme.colors.primary};
@@ -27,10 +26,10 @@ export const ViewAll = styled.a`
   cursor: pointer;
 `;
 
-export const BookListContainer = styled.div`
+export const AuthorsListContainer = styled.div`
   display: flex;
   overflow-x: auto;
-  gap: 20px;
+  gap: 24px;
   padding-top: 20px;
 
   &::-webkit-scrollbar {
@@ -38,36 +37,39 @@ export const BookListContainer = styled.div`
   }
 `;
 
-export const BookCard = styled.div`
+export const AuthorCard = styled.div`
+  display: flex;
+  align-items: center;
   flex: 0 0 auto;
-  width: 136px;
-  height: 262px;
+  gap: 20px;
+  width: 296px;
+  height: 68px;
+  padding: 1px;
   border-radius: 8px;
-  text-align: start;
+  border: 1px solid #e0e0e0;
 `;
 
-export const BookImage = styled.img`
-  width: 100%;
-  height: 198px;
+export const AuthorImage = styled.img`
+  width: 68px;
+  height: 68px;
   border-radius: 8px;
   object-fit: cover;
-  margin-bottom: 10px;
 `;
 
-export const BookTitle = styled.span`
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  width: 100%;
+export const AuthorInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const AuthorName = styled.span`
   font-size: ${(props) => props.theme.fontSizes.md};
   font-weight: ${(props) => props.theme.fontWeight.bold};
   color: ${(props) => props.theme.colors.text};
+  margin-bottom: 5px;
 `;
 
-export const BookAuthor = styled.span`
+export const AuthorBooks = styled.span`
   font-size: ${(props) => props.theme.fontSizes.sm};
   font-weight: ${(props) => props.theme.fontWeight.regular};
   color: ${(props) => props.theme.colors.secondaryText};
-  margin-top: 2px;
 `;

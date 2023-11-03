@@ -1,16 +1,16 @@
-import { FavoritesBookContainer, SectionHeader, Title, ViewAll } from './style';
+import { FavoriteBooksContainer, SectionHeader, Title, ViewAll } from './style';
 import BookList from './BookList';
 
-const FavoritesBooks = () => {
+const FavoriteBooks = () => {
   return (
-    <FavoritesBookContainer>
+    <FavoriteBooksContainer>
       <SectionHeader>
         <Title>Livros Favoritos</Title>
         <ViewAll>ver todos</ViewAll>
       </SectionHeader>
       <BookList />
-    </FavoritesBookContainer>
+    </FavoriteBooksContainer>
   );
 };
 
-export default FavoritesBooks;
+export default FavoriteBooks;

@@ -1,11 +1,35 @@
-import React from 'react';
-import FavoritesBooks from '../components/FavoritesBooks';
+import FavoriteAuthors from '../components/FavoriteAuthors';
+import FavoriteBooks from '../components/FavoriteBooks';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 56px);
+`;
+
+const HomeSection = styled.div`
+  width: 100%;
+  flex: 1;
+  margin-left: auto;
+  border-radius: 32px 0 0 0;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.05);
+  background-color: ${(props) => props.theme.colors.white};
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    width: calc(100% - 140px);
+    padding: 12px 0 12px 172px;
+  }
+`;
 
 const Home = () => {
   return (
-    <>
-      <FavoritesBooks />
-    </>
+    <Container>
+      <FavoriteBooks />
+      <HomeSection>
+        <FavoriteAuthors />
+      </HomeSection>
+    </Container>
   );
 };
 
