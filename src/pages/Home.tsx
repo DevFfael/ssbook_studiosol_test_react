@@ -2,6 +2,8 @@ import FavoriteAuthors from '../components/FavoriteAuthors';
 import FavoriteBooks from '../components/FavoriteBooks';
 import styled from 'styled-components';
 import Library from '../components/Library';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Container = styled.div`
   display: flex;
@@ -28,13 +30,17 @@ const HomeSection = styled.div`
 
 const Home = () => {
   return (
-    <Container>
-      <FavoriteBooks />
-      <HomeSection>
-        <FavoriteAuthors />
-        <Library />
-      </HomeSection>
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <FavoriteBooks />
+        <HomeSection>
+          <FavoriteAuthors />
+          <Library />
+        </HomeSection>
+      </Container>
+      <Footer />
+    </>
   );
 };
 

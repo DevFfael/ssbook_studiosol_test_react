@@ -41,7 +41,6 @@ export const AuthorsListContainer = styled.div`
 
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: grid;
-    overflow-x: hidden;
     grid-template-columns: repeat(3, 1fr);
     margin-right: 172px;
   }
@@ -54,7 +53,6 @@ export const AuthorCard = styled.div`
   gap: 20px;
   min-width: 296px;
   height: 68px;
-  padding: 1px;
   border-radius: 8px;
   border: 1px solid #e0e0e0;
 `;
