@@ -5,6 +5,12 @@ export const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+export const GET_USER_PHOTO = gql`
+  query GetUserPhoto {
+    userPicture
+  }
+`;
+
 export const GET_FAVORITE_BOOKS = gql`
   query GetFavoriteBook {
     favoriteBooks {

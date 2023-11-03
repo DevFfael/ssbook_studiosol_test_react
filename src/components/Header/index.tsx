@@ -1,5 +1,4 @@
 import Logo from '../../assets/logo.svg';
-import PerfilPhoto from '../../assets/avatar.png';
 import {
   HeaderFlexArea,
   HeaderContainer,
@@ -13,13 +12,20 @@ import {
 } from './style';
 import { Avatar, TextField } from '@mui/material';
 import { MdAddCircle, MdFavorite, MdSearch } from 'react-icons/md';
+import { GET_USER_PHOTO } from '../../api';
+import { useQuery } from '@apollo/client';
+import { Link } from 'react-router-dom';
 import TabsNaviagtion from '../TabsNavigation';
 
 const Header = () => {
+  const { data } = useQuery(GET_USER_PHOTO);
+
   return (
     <HeaderContainer>
       <HeaderFlexArea>
-        <img src={Logo} alt="" />
+        <Link to={'/'}>
+          <img src={Logo} alt="" />
+        </Link>
 
         <SearchInputContainer>
           <TextField
@@ -28,7 +34,9 @@ const Header = () => {
             size="small"
             fullWidth
             InputProps={{
-              endAdornment: <MdSearch style={{ fontSize: 24 }} />,
+              endAdornment: (
+                <MdSearch style={{ fontSize: 24, color: '#555' }} />
+              ),
             }}
           />
         </SearchInputContainer>
@@ -46,11 +54,11 @@ const Header = () => {
 
         <UserInfo>
           <Avatar
-            alt="Perfil usuário"
-            src={PerfilPhoto}
+            alt="User photo"
+            src={data && data.userPicture}
             sx={{ width: 32, height: 32 }}
           />
-          <UserName>Lara Meneses</UserName>
+          <UserName>Raffael Oliveira</UserName>
         </UserInfo>
       </HeaderFlexArea>
       <TabsArea>

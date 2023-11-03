@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header<{ $disabled?: boolean }>`
-  width: 100%;
   border-radius: 0px 0px 32px 0px;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
   background-color: ${(props) => props.theme.colors.white};
@@ -49,6 +48,12 @@ export const ActionCard = styled.div`
   justify-content: start;
   gap: 12px;
   color: ${(props) => props.theme.colors.text};
+  cursor: pointer;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.primary};
+  }
+
   & svg {
     font-size: 24px;
   }
@@ -67,7 +72,7 @@ export const UserInfo = styled.div`
   gap: 12px;
   padding-left: 24px;
   border-left: 1px solid #e4e4e4;
-
+  cursor: pointer;
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     padding: 0;
     border: none;
@@ -86,6 +91,8 @@ export const UserName = styled.p`
 
 export const TabsArea = styled.div`
   display: block;
+  margin-left: 20px;
+
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: none;
   }
