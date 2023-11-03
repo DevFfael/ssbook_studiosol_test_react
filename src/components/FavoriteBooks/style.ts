@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const FavoriteBooksContainer = styled.div`
   margin: 32px 0 32px 20px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    margin: 24px 172px;
+  }
 `;
 
 export const SectionHeader = styled.div`
@@ -9,6 +13,10 @@ export const SectionHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-right: 20px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    margin-right: 0;
+  }
 `;
 
 export const Title = styled.h2`
@@ -48,7 +56,6 @@ export const BookCard = styled.div`
 
 export const BookImage = styled.img`
   width: 100%;
-  height: 198px;
   border-radius: 8px;
   object-fit: cover;
   margin-bottom: 10px;

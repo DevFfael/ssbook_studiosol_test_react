@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const LibraryContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 21px;
-  margin: 30px 20px 0 20px;
+  gap: 20px;
+  margin: 30px 0 0 20px;
 `;
 
 export const SectionHeader = styled.div`
@@ -48,12 +48,18 @@ export const CategoryCard = styled.button<{ $active?: boolean }>`
 `;
 
 export const BookListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
+  margin-right: 20px;
 
-  &::-webkit-scrollbar {
-    display: none;
+  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    grid-template-columns: repeat(3, 1fr);
+    margin-right: 172px;
   }
 `;
 
@@ -63,7 +69,6 @@ export const BookCard = styled.div`
   flex: 0 0 auto;
   gap: 20px;
   width: 100%;
-  height: 70px;
   padding: 1px;
   border-radius: 8px;
 `;
@@ -73,6 +78,11 @@ export const BookImage = styled.img`
   height: 70px;
   border-radius: 8px;
   object-fit: cover;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    width: 68px;
+    height: 100px;
+  }
 `;
 
 export const BookInfoContainer = styled.div`

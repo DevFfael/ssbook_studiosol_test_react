@@ -30,6 +30,16 @@ const BookFavoriteList = () => {
         <BookTitle>Book Title 2</BookTitle>
         <BookAuthor>Nome do autor</BookAuthor>
       </BookCard>
+      <BookCard>
+        <BookImage src={Image} alt="Book 1" />
+        <BookTitle>Book Title 2</BookTitle>
+        <BookAuthor>Nome do autor</BookAuthor>
+      </BookCard>
+      <BookCard>
+        <BookImage src={Image} alt="Book 1" />
+        <BookTitle>Book Title 2</BookTitle>
+        <BookAuthor>Nome do autor</BookAuthor>
+      </BookCard>
     </BookListContainer>
   );
 };

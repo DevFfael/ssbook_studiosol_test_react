@@ -19,7 +19,6 @@ const HomeSection = styled.div`
 
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     width: calc(100% - 140px);
-    padding: 12px 0 12px 172px;
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {

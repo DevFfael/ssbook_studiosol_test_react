@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
 export const FavoriteAuthorsContainer = styled.div`
-  margin: 30px 20px 0 20px;
+  margin: 30px 0px 0 20px;
 `;
 
 export const SectionHeader = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-right: 20px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    margin-right: 172px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -35,6 +38,13 @@ export const AuthorsListContainer = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    margin-right: 172px;
+  }
 `;
 
 export const AuthorCard = styled.div`
@@ -42,7 +52,7 @@ export const AuthorCard = styled.div`
   align-items: center;
   flex: 0 0 auto;
   gap: 20px;
-  width: 296px;
+  min-width: 296px;
   height: 68px;
   padding: 1px;
   border-radius: 8px;
