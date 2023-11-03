@@ -9,7 +9,7 @@ import {
 import { Link } from 'react-router-dom';
 import { GET_FAVORITE_BOOKS } from '../../api';
 import { useQuery } from '@apollo/client';
-import Loading from '../Loading';
+import Loading from '../../utils/Loading';
 
 interface IBook {
   id: string;

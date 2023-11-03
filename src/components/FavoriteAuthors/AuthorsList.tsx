@@ -8,7 +8,7 @@ import {
 } from './style';
 import { useQuery } from '@apollo/client';
 import { GET_FAVORITE_AUTHORS } from '../../api';
-import Loading from '../Loading';
+import Loading from '../../utils/Loading';
 
 interface IAuthor {
   id: string;
