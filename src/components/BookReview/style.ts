@@ -12,6 +12,28 @@ export const Container = styled.div`
   }
 `;
 
+export const HeaderMobile = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 153px;
+  background-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+  color: #fff;
+  padding: 20px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    display: none;
+  }
+`;
+
+export const HeaderMobileAction = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+`;
+
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,11 +46,11 @@ export const SectionText = styled.div`
 
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: 0;
     background-color: ${(props) => props.theme.colors.white};
     border-radius: 32px 0 0 0;
-    padding: 32px 20px;
+    padding: 32px 20px 60px 20px;
   }
 `;
 

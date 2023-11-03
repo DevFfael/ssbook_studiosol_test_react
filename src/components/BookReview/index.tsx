@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   AboutContainer,
   AboutTitle,
@@ -6,6 +7,8 @@ import {
   AuthorName,
   Container,
   FavoriteMobile,
+  HeaderMobile,
+  HeaderMobileAction,
   ImageBook,
   ReviewContainer,
   Section,
@@ -17,7 +20,9 @@ import {
 } from './style';
 import {
   MdAddCircle,
+  MdArrowBack,
   MdDownload,
+  MdMoreVert,
   MdOutlineFavoriteBorder,
   MdShare,
 } from 'react-icons/md';
@@ -39,6 +44,14 @@ interface IBook {
 const BookReview = ({ data }: IBook) => {
   return (
     <Container>
+      <HeaderMobile>
+        <HeaderMobileAction>
+          <Link to={'/'} style={{ textDecoration: 'none', color: 'white' }}>
+            <MdArrowBack />
+          </Link>
+          <MdMoreVert />
+        </HeaderMobileAction>
+      </HeaderMobile>
       <Section>
         <ImageBook src={data.book.cover} />
         <ActionContainer>
