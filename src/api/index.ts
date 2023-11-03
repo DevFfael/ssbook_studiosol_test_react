@@ -51,3 +51,17 @@ export const GET_BOOKS = gql`
     }
   }
 `;
+
+export const GET_BOOK_ID = gql`
+  query GetBook($id: ID!) {
+    book(id: $id) {
+      id
+      name
+      cover
+      description
+      author {
+        name
+      }
+    }
+  }
+`;
