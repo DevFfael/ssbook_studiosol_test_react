@@ -28,7 +28,11 @@ const BookFavoriteList = () => {
     <BookListContainer $length={data && data.favoriteBooks.length}>
       {data &&
         data.favoriteBooks.map((book: IBook) => (
-          <Link to={`book/${book.id}`} style={{ textDecoration: 'none' }}>
+          <Link
+            key={book.id}
+            to={`book/${book.id}`}
+            style={{ textDecoration: 'none' }}
+          >
             <BookCard>
               <BookImage src={book.cover} alt="Capa livro" />
               <InfoContainer>

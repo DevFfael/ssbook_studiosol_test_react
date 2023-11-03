@@ -27,6 +27,10 @@ export const ViewAll = styled.a`
   color: ${(props) => props.theme.colors.primary};
   text-decoration: none;
   cursor: pointer;
+
+  &:hover {
+    color: #6331c4;
+  }
 `;
 
 export const AuthorsListContainer = styled.div`

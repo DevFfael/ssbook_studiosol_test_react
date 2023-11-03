@@ -23,3 +23,17 @@ export const GET_FAVORITE_BOOKS = gql`
     }
   }
 `;
+
+export const GET_FAVORITE_AUTHORS = gql`
+  query GetFavoriteAuthor {
+    favoriteAuthors {
+      id
+      name
+      picture
+      isFavorite
+      books {
+        id
+      }
+    }
+  }
+`;
