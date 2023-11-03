@@ -4,7 +4,7 @@ export const LibraryContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin: 30px 0 0 20px;
+  margin: 30px 0 100px 20px;
 `;
 
 export const SectionHeader = styled.div`
@@ -45,6 +45,10 @@ export const CategoryCard = styled.button<{ $active?: boolean }>`
   letter-spacing: 0.5px;
   background: ${(props) =>
     props.$active ? props.theme.colors.primary : 'none'};
+
+  &:hover {
+    border-color: ${(props) => props.theme.colors.primary};
+  }
 `;
 
 export const BookListContainer = styled.div`

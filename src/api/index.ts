@@ -37,3 +37,17 @@ export const GET_FAVORITE_AUTHORS = gql`
     }
   }
 `;
+
+export const GET_BOOKS = gql`
+  query GetBooks {
+    allBooks {
+      id
+      name
+      author {
+        name
+      }
+      cover
+      isFavorite
+    }
+  }
+`;

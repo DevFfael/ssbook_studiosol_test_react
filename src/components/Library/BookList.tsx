@@ -6,99 +6,42 @@ import {
   BookListContainer,
   BookName,
 } from './style';
-import Book from '../../assets/image.png';
+import { useQuery } from '@apollo/client';
+import { GET_BOOKS } from '../../api';
+import Loading from '../Loading';
+import { Link } from 'react-router-dom';
+
+interface IBook {
+  id: string;
+  name: string;
+  cover: string;
+  author: {
+    name: string;
+  };
+}
 
 const BookList = () => {
+  const { loading, data } = useQuery(GET_BOOKS);
+
+  if (loading) return <Loading />;
   return (
     <BookListContainer>
-      <BookCard>
-        <BookImage src={Book} />
-        <BookInfoContainer>
-          <BookName>
-            {
-              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
-            }
-          </BookName>
-          <BookAuthor>Raffael Oliveira</BookAuthor>
-        </BookInfoContainer>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Book} />
-        <BookInfoContainer>
-          <BookName>
-            {
-              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
-            }
-          </BookName>
-          <BookAuthor>Raffael Oliveira</BookAuthor>
-        </BookInfoContainer>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Book} />
-        <BookInfoContainer>
-          <BookName>
-            {
-              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
-            }
-          </BookName>
-          <BookAuthor>Raffael Oliveira</BookAuthor>
-        </BookInfoContainer>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Book} />
-        <BookInfoContainer>
-          <BookName>
-            {
-              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
-            }
-          </BookName>
-          <BookAuthor>Raffael Oliveira</BookAuthor>
-        </BookInfoContainer>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Book} />
-        <BookInfoContainer>
-          <BookName>
-            {
-              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
-            }
-          </BookName>
-          <BookAuthor>Raffael Oliveira</BookAuthor>
-        </BookInfoContainer>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Book} />
-        <BookInfoContainer>
-          <BookName>
-            {
-              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
-            }
-          </BookName>
-          <BookAuthor>Raffael Oliveira</BookAuthor>
-        </BookInfoContainer>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Book} />
-        <BookInfoContainer>
-          <BookName>
-            {
-              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
-            }
-          </BookName>
-          <BookAuthor>Raffael Oliveira</BookAuthor>
-        </BookInfoContainer>
-      </BookCard>
-      <BookCard>
-        <BookImage src={Book} />
-        <BookInfoContainer>
-          <BookName>
-            {
-              'O visconde que me amava (Os Bridgertons Livro 2) O visconde que me am ava (Os Bridgertons Livro 2) ava (Os Bridgertons Livro 2)'
-            }
-          </BookName>
-          <BookAuthor>Raffael Oliveira</BookAuthor>
-        </BookInfoContainer>
-      </BookCard>
+      {data &&
+        data.allBooks.map((book: IBook) => (
+          <Link
+            key={book.id}
+            to={`book/${book.id}`}
+            style={{ textDecoration: 'none' }}
+          >
+            <BookCard>
+              <BookImage src={book.cover} />
+              <BookInfoContainer>
+                <BookName>{book.name}</BookName>
+                <BookAuthor>{book.author.name}</BookAuthor>
+              </BookInfoContainer>
+            </BookCard>
+          </Link>
+        ))}
     </BookListContainer>
   );
 };
