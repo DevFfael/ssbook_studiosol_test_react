@@ -1,4 +1,3 @@
-import React from 'react';
 import { FavoritesBookContainer, SectionHeader, Title, ViewAll } from './style';
 import BookList from './BookList';
 
@@ -9,6 +8,7 @@ const FavoritesBooks = () => {
         <Title>Livros Favoritos</Title>
         <ViewAll>ver todos</ViewAll>
       </SectionHeader>
+      <BookList />
     </FavoritesBookContainer>
   );
 };
