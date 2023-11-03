@@ -2,6 +2,7 @@
 
 O portal SSBOOK é uma aplicação web, baseado em sistema de gerenciamento de livros. O desafio proposto como teste de desenvolvimento FrontEnd da empresa Studio Sol.
 
+Acesso GitHub: [Portal SSBOOK](https://github.com/DevFfael/ssbook_studiosol_test_react)
 
 ## 💻 Tecnologias e Funções
 
@@ -21,7 +22,7 @@ Certifique-se de ter o Node.js instalado em sua máquina.
 
 Se for acessado pelo GitHub, faça o clone com:
 ```bash
-git clone https://github.com/DevFfael/EmCash-FrontEnd.git
+git clone https://github.com/DevFfael/ssbook_studiosol_test_react.git
 ```
 
 Instale as dependências do projeto.
