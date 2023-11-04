@@ -10,6 +10,7 @@ import { useQuery } from '@apollo/client';
 import { GET_BOOKS } from '../../api';
 import Loading from '../../utils/Loading';
 import { Link } from 'react-router-dom';
+import Error from '../../utils/Error';
 
 interface IBook {
   id: string;
@@ -21,9 +22,10 @@ interface IBook {
 }
 
 const BookList = () => {
-  const { loading, data } = useQuery(GET_BOOKS);
+  const { loading, error, data } = useQuery(GET_BOOKS);
 
   if (loading) return <Loading />;
+  if (error) return <Error />;
   return (
     <BookListContainer>
       {data &&

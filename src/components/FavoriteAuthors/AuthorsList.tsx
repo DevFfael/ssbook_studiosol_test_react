@@ -9,6 +9,7 @@ import {
 import { useQuery } from '@apollo/client';
 import { GET_FAVORITE_AUTHORS } from '../../api';
 import Loading from '../../utils/Loading';
+import Error from '../../utils/Error';
 
 interface IAuthor {
   id: string;
@@ -21,9 +22,10 @@ interface IAuthor {
 }
 
 const AuthorsList = () => {
-  const { loading, data } = useQuery(GET_FAVORITE_AUTHORS);
+  const { loading, error, data } = useQuery(GET_FAVORITE_AUTHORS);
 
   if (loading) return <Loading />;
+  if (error) return <Error />;
   return (
     <AuthorsListContainer>
       {data &&

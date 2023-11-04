@@ -5,6 +5,7 @@ import BookReview from '../components/BookReview';
 import { useQuery } from '@apollo/client';
 import { GET_BOOK_ID } from '../api';
 import Loading from '../utils/Loading';
+import Error from '../utils/Error';
 
 const HeaderBookPageContainer = styled.div`
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
@@ -14,11 +15,12 @@ const HeaderBookPageContainer = styled.div`
 
 const Book = () => {
   const { id } = useParams();
-  const { loading, data } = useQuery(GET_BOOK_ID, {
+  const { loading, error, data } = useQuery(GET_BOOK_ID, {
     variables: { id },
   });
 
   if (loading) return <Loading />;
+  if (error) return <Error />;
   return (
     <>
       <HeaderBookPageContainer>

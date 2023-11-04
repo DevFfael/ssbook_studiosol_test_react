@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { GET_FAVORITE_BOOKS } from '../../api';
 import { useQuery } from '@apollo/client';
 import Loading from '../../utils/Loading';
+import Error from '../../utils/Error';
 
 interface IBook {
   id: string;
@@ -21,9 +22,10 @@ interface IBook {
 }
 
 const BookFavoriteList = () => {
-  const { loading, data } = useQuery(GET_FAVORITE_BOOKS);
+  const { loading, error, data } = useQuery(GET_FAVORITE_BOOKS);
 
   if (loading) return <Loading />;
+  if (error) return <Error />;
   return (
     <BookListContainer $length={data && data.favoriteBooks.length}>
       {data &&
